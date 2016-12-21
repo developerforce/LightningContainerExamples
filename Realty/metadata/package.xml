@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>Contact.Address__c</members>
+        <members>Contact.Category__c</members>
+        <members>Contact.City__c</members>
+        <members>Contact.MemberSince__c</members>
+        <members>Contact.Notes__c</members>
+        <members>Contact.Occupation__c</members>
+        <members>Contact.Pic__c</members>
+        <members>Contact.State__c</members>
+        <members>Contact.Zip__c</members>
+        <name>CustomField</name>
+    </types>
+    <types>
+        <members>Broker__c</members>
+        <members>PropertyActivityType__c</members>
+        <members>PropertyActivity__c</members>
+        <members>PropertyBroker__c</members>
+        <members>Property__c</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
+        <members>Broker__c</members>
+        <members>PropertyActivityType__c</members>
+        <members>PropertyActivity__c</members>
+        <members>PropertyBroker__c</members>
+        <members>Property__c</members>
+        <name>CustomTab</name>
+    </types>
+    <types>
+        <members>Broker__c-Broker Layout</members>
+        <members>Contact-Contact Layout</members>
+        <members>PropertyActivityType__c-ActivityType Layout</members>
+        <members>PropertyActivity__c-Property Activity Layout</members>
+        <members>PropertyBroker__c-PropertyBroker Layout</members>
+        <members>Property__c-Property Layout</members>
+        <name>Layout</name>
+    </types>
+    <types>
+        <members>AdminPermissions</members>
+        <members>SalesPermissions</members>
+        <name>PermissionSet</name>
+    </types>
+    <types>
+        <members>Realty</members>
+        <name>StaticResource</name>
+    </types>
+    <types>
+        <members>Realty</members>
+        <name>AuraDefinitionBundle</name>
+    </types>
+    <types>
+        <members>Realty</members>
+        <name>FlexiPage</name>
+    </types>
+    <version>37.0</version>
+</Package>
