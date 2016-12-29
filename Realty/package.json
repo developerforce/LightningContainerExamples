@@ -5,7 +5,8 @@
   "main": "",
   "scripts": {
     "build": "webpack",
-    "deploy": "jsforce-deploy -l <LOGIN_URL_FOR_YOUR_SERVER> -u <USERNAME> -p <PASSWORD> -D metadata"
+    "deploy": "jsforce-deploy -l <LOGIN_URL_FOR_YOUR_SERVER> -u <YOUR_USERNAME> -p <YOUR_PASSWORD> -D metadata",
+    "load": "node ./bin/loadData.js -l <LOGIN_URL_FOR_YOUR_SERVER> -u <YOUR_USERNAME> -p <YOUR_PASSWORD>"
   },
   "repository": {
     "type": "git",

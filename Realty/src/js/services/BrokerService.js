@@ -6,11 +6,15 @@ export let filterFoundBrokers = (result) => {
         records[i].broker_id = records[i].Id;
         records[i].first_name = records[i].FirstName__c;
         records[i].last_name = records[i].LastName__c;
-        records[i].name = records[i].Name;
         records[i].title = records[i].Title__c;
+        records[i].address = records[i].Address__c;
+        records[i].city = records[i].City__c;
+        records[i].state = records[i].State__c;
+        records[i].zip = records[i].Zip__c;
         records[i].office_phone = records[i].OfficePhone__c;
         records[i].mobile_phone = records[i].MobilePhone__c;
         records[i].email = records[i].Email__c;
+        records[i].pic = records[i].Pic__c;
     }
     return records;
 }
@@ -30,11 +34,15 @@ export let filterBroker = (broker) => {
     filteredBroker.Id = broker.broker_id;
     filteredBroker.FirstName__c = broker.first_name;
     filteredBroker.LastName__c = broker.last_name;
-    filteredBroker.Name = broker.name;
     filteredBroker.Title__c = broker.title;
+    filteredBroker.Address__c = broker.address;
+    filteredBroker.City__c = broker.city;
+    filteredBroker.State__c = broker.state;
+    filteredBroker.Zip__c = broker.zip;
     filteredBroker.OfficePhone__c = broker.office_phone;
     filteredBroker.MobilePhone__c = broker.mobile_phone;
     filteredBroker.Email__c = broker.email;
+    filteredBroker.Pic__c = broker.pic;
     return filteredBroker;
 }
 
@@ -45,7 +53,7 @@ export let findAll = sort => {
     else if (sort) {
         sort = sort + "__c"; // FIX THIS
     }
-    let q = "SELECT Id, FirstName__c, LastName__c, Name, Title__c, OfficePhone__c, MobilePhone__c, Email__c FROM Broker__c";
+    let q = "SELECT Id, FirstName__c, LastName__c, Title__c, Address__c, City__c, State__c, Zip__c, OfficePhone__c, MobilePhone__c, Email__c, Pic__c FROM Broker__c";
     if (sort) {
         q = q + " ORDER BY " + sort
     }
@@ -53,7 +61,7 @@ export let findAll = sort => {
 }
 
 export let findByProperty = propertyId => {
-    let q = "SELECT Id, FirstName__c, LastName__c, Name, Title__c, OfficePhone__c, MobilePhone__c, Email__c FROM Broker__c " +
+    let q = "SELECT Id, FirstName__c, LastName__c, Title__c, Address__c, City__c, State__c, Zip__c, OfficePhone__c, MobilePhone__c, Email__c, Pic__c FROM Broker__c " +
             "WHERE Id IN " +
             "(SELECT Broker__c FROM PropertyBroker__c WHERE Property__c = '" + propertyId + "') " +
             "ORDER BY LastName__c";
@@ -61,12 +69,12 @@ export let findByProperty = propertyId => {
 }
 
 export let findByName = name => {
-    let q = "SELECT Id, FirstName__c, LastName__c, Name, Title__c, OfficePhone__c, MobilePhone__c, Email__c FROM Broker__c WHERE Name = '" + name + "'";
+    let q = "SELECT Id, FirstName__c, LastName__c, Title__c, Address__c, City__c, State__c, Zip__c, OfficePhone__c, MobilePhone__c, Email__c, Pic__c FROM Broker__c WHERE Name = '" + name + "'";
     return h.query(q);
 }
 
 export let findById = id => {
-    let q = "SELECT Id, FirstName__c, LastName__c, Name, Title__c, OfficePhone__c, MobilePhone__c, Email__c FROM Broker__c WHERE Id = '" + id + "'";
+    let q = "SELECT Id, FirstName__c, LastName__c, Title__c, Address__c, City__c, State__c, Zip__c, OfficePhone__c, MobilePhone__c, Email__c, Pic__c FROM Broker__c WHERE Id = '" + id + "'";
     return h.query(q);
 }
 

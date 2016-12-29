@@ -11,11 +11,11 @@ export let filterFoundProperties = (result) => {
         records[i].bedrooms = records[i].Bedrooms__c;
         records[i].bathrooms = records[i].Bathrooms__c;
         records[i].price = records[i].Price__c;
-        //records[i].location = records[i].Location__c;
         records[i].pic = records[i].Pic__c;
         records[i].teaser = records[i].Teaser__c;
-        records[i].description = records[i].Description__c;
         records[i].size = records[i].Size__c;
+        records[i].lot_size = records[i].LotSize__c;
+        records[i].description = records[i].Description__c;
     }
     return records;
 }
@@ -41,11 +41,11 @@ export let filterProperty = (property) => {
     filteredProperty.Bedrooms__c = property.bedrooms;
     filteredProperty.Bathrooms__c = property.bathrooms;
     filteredProperty.Price__c = property.price;
-    //filteredProperty.Location__c = property.location;
     filteredProperty.Pic__c = property.pic;
     filteredProperty.Teaser__c = property.teaser;
-    filteredProperty.Description__c = property.description;
     filteredProperty.Size__c = property.size;
+    filteredProperty.LotSize__c = property.lot_size;
+    filteredProperty.Description__c = property.description;
     return filteredProperty;
 }
 
@@ -56,7 +56,7 @@ export let findAll = sort => {
     else if (sort) {
         sort = sort + "__c"; // FIX THIS
     }
-    let q = "SELECT Id, Address__c, City__c, State__c, Zip__c, Bedrooms__c, Bathrooms__c, Price__c, Location__c, Pic__c FROM Property__c";
+    let q = "SELECT Id, Address__c, City__c, State__c, Zip__c, Bedrooms__c, Bathrooms__c, Price__c, Pic__c, Teaser__c, Size__c, LotSize__c, Description__c FROM Property__c";
     if (sort) {
         q = q + " ORDER BY " + sort
     }
@@ -64,12 +64,12 @@ export let findAll = sort => {
 };
 
 export let findByName = name => {
-    let q = "SELECT Id, Address__c, City__c, State__c, Zip__c, Bedrooms__c, Bathrooms__c, Price__c, Location__c, Pic__c, Teaser__c, Description__c, Size__c FROM Property__c WHERE Name = '" + name + "'";
+    let q = "SELECT Id, Address__c, City__c, State__c, Zip__c, Bedrooms__c, Bathrooms__c, Price__c, Pic__c, Teaser__c, Size__c, LotSize__c, Description__c FROM Property__c WHERE Name = '" + name + "'";
     return h.query(q);
 };
 
 export let findByBroker = brokerId => {
-    let q = "SELECT Id, Address__c, City__c, State__c, Zip__c, Bedrooms__c, Bathrooms__c, Price__c, Location__c, Pic__c, Teaser__c, Description__c, Size__c FROM Property__c " +
+    let q = "SELECT Id, Address__c, City__c, State__c, Zip__c, Bedrooms__c, Bathrooms__c, Price__c, Pic__c, Teaser__c, Size__c, LotSize__c, Description__c FROM Property__c " +
             "WHERE Id IN " +
             "(SELECT Property__c FROM PropertyBroker__c WHERE Broker__c = '" + brokerId + "') "
             "ORDER BY Address__c";
@@ -77,7 +77,7 @@ export let findByBroker = brokerId => {
 };
 
 export let findById = id => {
-    let q = "SELECT Id, Address__c, City__c, State__c, Zip__c, Bedrooms__c, Bathrooms__c, Price__c, Location__c, Pic__c, Teaser__c, Description__c, Size__c FROM Property__c WHERE Id = '" + id + "'";
+    let q = "SELECT Id, Address__c, City__c, State__c, Zip__c, Bedrooms__c, Bathrooms__c, Price__c, Pic__c, Teaser__c, Size__c, LotSize__c, Description__c FROM Property__c WHERE Id = '" + id + "'";
     return h.query(q);
 };
 
