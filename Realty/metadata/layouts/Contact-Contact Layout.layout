@@ -25,14 +25,6 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>FirstName__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>LastName__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
                 <field>Address__c</field>
             </layoutItems>
             <layoutItems>
@@ -66,6 +58,10 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Pic__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>ExternalId__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -195,24 +191,6 @@
         <detailHeading>false</detailHeading>
         <editHeading>false</editHeading>
         <label>Custom Links</label>
-        <layoutColumns>
-            <layoutItems>
-                <customLink>GoogleSearch</customLink>
-            </layoutItems>
-            <layoutItems>
-                <customLink>YahooWeather</customLink>
-            </layoutItems>
-        </layoutColumns>
-        <layoutColumns>
-            <layoutItems>
-                <customLink>GoogleMaps</customLink>
-            </layoutItems>
-        </layoutColumns>
-        <layoutColumns>
-            <layoutItems>
-                <customLink>SendGmail</customLink>
-            </layoutItems>
-        </layoutColumns>
         <style>CustomLinks</style>
     </layoutSections>
     <quickActionList>

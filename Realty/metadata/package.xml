@@ -10,6 +10,7 @@
         <members>Contact.Pic__c</members>
         <members>Contact.State__c</members>
         <members>Contact.Zip__c</members>
+        <members>Contact.ExternalId__c</members>
         <name>CustomField</name>
     </types>
     <types>

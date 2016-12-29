@@ -17,6 +17,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Broker__c.ExternalId__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Broker__c.FirstName__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -102,6 +107,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>PropertyActivityType__c.ExternalId__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>PropertyActivity__c.ActivityDate__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -168,6 +178,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Property__c.Description__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Property__c.ExternalId__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
