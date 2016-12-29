@@ -10,6 +10,10 @@ Check out this video for a quick walkthrough:
 
 Follow the instructions below if you prefer to install the application on your local machine:
 
+1. Enable Lightning Experience in your org
+
+1. Enable a My-Domain for your org
+
 1. Clone this repository or download and unzip [this](https://github.com/ccoenraets/lightning-react-app/archive/master.zip) zip file.
 
 1. Navigate to the **lightning-react-app** directory and install the project dependencies:
@@ -34,12 +38,20 @@ Follow the instructions below if you prefer to install the application on your l
     npm run deploy
     ```    
 
+1. Use your org's setup UI to assign either the AdminPermissions or SalesPermissions permission set to your org username
+
+1. Use your org's setup UI to activate the Realty flexipage and make it available in your org's navigation menus.
+
+1. Type the following command to upload some sample data to your force.com server:
+    
+    ```
+    npm run load
+    ```    
+
 ## Work in Progress
 
 This project is work in progress. For example, here are some items that still need work:
 
-- Provide data to populate objects
 - Make components more robust and general purpose
-- Fix React keys throughout the project to eliminate warnings
 
 
