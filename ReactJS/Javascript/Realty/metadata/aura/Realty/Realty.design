@@ -1,2 +1,3 @@
 <design:component label="Realty">
+    <design:attribute name="mainTitle" label="Main Title" default="My Properties"/>
 </design:component>

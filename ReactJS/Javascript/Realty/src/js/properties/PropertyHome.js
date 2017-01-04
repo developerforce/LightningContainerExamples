@@ -1,4 +1,6 @@
 import React from 'react';
+import * as LCC from "lightning-container";
+import * as QueryString from "query-string";
 
 import * as propertyService from '../services/PropertyService';
 
@@ -6,6 +8,12 @@ import {HomeHeader} from '../components/PageHeader';
 
 import PropertyList from './PropertyList';
 import NewPropertyWindow from './NewPropertyWindow';
+
+let mainTitle = "My Properties";
+let queryParams = QueryString.parse(location.search);
+if (queryParams && queryParams.mainTitle) {
+    mainTitle = decodeURIComponent(queryParams.mainTitle).replace(/\+/g, ' ');
+}
 
 export default React.createClass({
 
@@ -55,6 +63,14 @@ export default React.createClass({
                 let filteredProperties = propertyService.filterFoundProperties(properties);
                 this.setState({addingProperty: false, properties:filteredProperties});
             });
+            let message = {};
+            message.address = property.address;
+            message.price = property.price;
+            message.city = property.city;
+            message.state = property.state;
+            message.zip = property.zip;
+            message.description = property.description;
+            LCC.sendMessage({name: "PropertyCreated", value: message});
         });
     },
 
@@ -81,7 +97,7 @@ export default React.createClass({
         return (
             <div>
                 <HomeHeader type="properties"
-                            title="My Properties"
+                            title={mainTitle}
                             newLabel="New Property"
                             actions={[{value:"new", label:"New Property"}]}
                             itemCount={this.state.properties.length}

@@ -1,7 +1,7 @@
-import * as lcc from "lightning-container";
+import * as LCC from "lightning-container";
 import DataService from "forcejs/data-service";
 
-let service = DataService.createInstance({accessToken:lcc.getRESTAPISessionKey()}, {apiVersion:"v37.0"});
+let service = DataService.createInstance({accessToken:LCC.getRESTAPISessionKey()}, {apiVersion:"v37.0"});
 service.useProxy = false; // This line should not be necessary.
 
 export let query = (soql) => service.query(soql);

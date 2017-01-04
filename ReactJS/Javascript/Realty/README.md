@@ -1,6 +1,10 @@
 # Lightning Container Components use of Lightning Design System and ReactJS 
 
-This repository is the home of **Lightning Realty**, a reference application built with [React](http://facebook.github.io/react/) and the [Lightning Design System](http://www.lightningdesignsystem.com). 
+This repository is the home of **Lightning Realty**, a reference application built with [React](http://facebook.github.io/react/) and the [Lightning Design System](http://www.lightningdesignsystem.com).
+
+This application is a force.com adaptation of the **Lightning Realty** example application written by Christophe Coenraets and that is available at https://github.com/ccoenraets/lightning-react-app 
+
+This application is written using ECMAScript 6 including ECMAScript 6 modules.
 
 Check out this video for a quick walkthrough:
 
@@ -14,7 +18,7 @@ Follow the instructions below if you prefer to install the application on your l
 
 1. Enable a My-Domain for your org
 
-1. Clone this repository or download and unzip [this](https://github.com/ccoenraets/lightning-react-app/archive/master.zip) zip file.
+1. Clone this repository
 
 1. Navigate to the **lightning-react-app** directory and install the project dependencies:
 
@@ -27,8 +31,6 @@ Follow the instructions below if you prefer to install the application on your l
     ```
     npm run build
     ```
-    
-    The project is written using ECMAScript 6 including ECMAScript 6 modules.
 
 1. Edit the package.json file to reference your force.com server, and to use your force.com username and password
 
