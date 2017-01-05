@@ -5,7 +5,7 @@
   "main": "",
   "scripts": {
     "build": "webpack",
-    "deploy": "jsforce-deploy -l http://ddew-ltm2.internal.salesforce.com:6109 -u realtytest@lcc.com -p test1234 -D metadata",
+    "deploy": "jsforce-deploy -l <LOGIN_URL_FOR_YOUR_SERVER> -u <YOUR_USERNAME> -p <YOUR_PASSWORD> -D metadata",
     "load": "node ./bin/loadData.js -l <LOGIN_URL_FOR_YOUR_SERVER> -u <YOUR_USERNAME> -p <YOUR_PASSWORD>"
   },
   "repository": {
