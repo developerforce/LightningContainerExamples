@@ -11,7 +11,11 @@
             else {
                 messageToUser = "Small Real Estate Opportunity in " + value.city + ", " + value.state + " : $" + value.price;
             }
-            component.set("v.messageReceived", messageToUser);
+            var log = component.get("v.log");
+            log.push(messageToUser);
+            component.set("v.log", log);
+            //component.set("v.messageReceived", messageToUser);
+            //$A.get('e.force:refreshView').fire();
         }
     },
 

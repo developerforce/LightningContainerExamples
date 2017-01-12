@@ -63,6 +63,8 @@ export default React.createClass({
                 let filteredProperties = propertyService.filterFoundProperties(properties);
                 this.setState({addingProperty: false, properties:filteredProperties});
             });
+
+            // Send message to custom LC
             let message = {};
             message.address = property.address;
             message.price = property.price;

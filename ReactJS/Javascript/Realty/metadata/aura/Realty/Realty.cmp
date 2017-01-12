@@ -2,13 +2,17 @@
 
     <aura:attribute access="global" name="mainTitle" type="String" required="true" default="My Properties"/>
     
-    <aura:attribute access="private" name="messageReceived" type="String" default=""/>
+    <aura:attribute access="private" name="log" type="String[]" default="[]"/>
     <aura:attribute access="private" name="error" type="String" default=""/>
     
     <div>
-        <aura:if isTrue="{! !empty(v.messageReceived)}">
-            <lightning:textarea name="messageReceivedTextArea" value="{!v.messageReceived}" label=" "/>
-        </aura:if>
+        <div class="container slds-p-top--medium">
+            <div id="list" class="row">
+                <aura:iteration items="{!v.log}" var="message">
+                    <p>{!message}</p>
+                </aura:iteration>
+            </div>
+        </div>
         
         <aura:if isTrue="{! !empty(v.error)}">
             <lightning:textarea name="errorTextArea" value="{!v.error}" label="Error: "/>
