@@ -1,0 +1,5 @@
+{
+    "landing-pages": ["index.html"],
+    "content-security-policy-type": "lightning",
+    "content-security-policy": "default-src *;"
+}
