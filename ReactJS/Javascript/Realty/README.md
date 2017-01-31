@@ -16,35 +16,38 @@ Follow the instructions below if you prefer to install the application on your l
 
 1. Enable Lightning Experience in your org
 
-1. Enable a My-Domain for your org
+2. Enable a My-Domain for your org
 
-1. Clone this repository
+2a. Turn on Visualforce AND Lightning(Aura) separate domains.
 
-1. Navigate to the **lightning-react-app** directory and install the project dependencies:
+3. Clone this repository
+
+4. Navigate to the **lightning-react-app** directory and install the project dependencies:
 
     ```
     npm install
     ```
 
-1. Type the following command to build the client application:
+5. Type the following command to build the client application:
 
     ```
     npm run build
     ```
 
-1. Edit the package.json file to reference your force.com server, and to use your force.com username and password
+6. Edit the package.json file to reference your force.com server, and to use your force.com username and password
 
-1. Type the following command to deploy the client application and all supporting metadata to your force.com server:
+7. Type the following command to deploy the client application and all supporting metadata to your force.com server:
     
     ```
     npm run deploy
     ```    
 
-1. Use your org's setup UI to assign either the AdminPermissions or SalesPermissions permission set to your org username
+8. Use your org's setup UI to assign either the AdminPermissions or SalesPermissions permission set to your org username
+   -- Really, you must do this even for System Administrator users
 
-1. Use your org's setup UI to activate the Realty flexipage and make it available in your org's navigation menus.
+9. Use your org's setup UI to activate the Realty flexipage and make it available in your org's navigation menus.
 
-1. Type the following command to upload some sample data to your force.com server:
+10. Type the following command to upload some sample data to your force.com server:
     
     ```
     npm run load
