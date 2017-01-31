@@ -3,13 +3,17 @@ var fs = require("fs");
 var archiver = require("archiver");
 var HtmlWebpackPlugin = require("html-webpack-plugin");
 
-function ArchiverPlugin(staticResourceName) {
-    this.path = path.resolve("metadata/staticresources") + "/" + staticResourceName + ".resource";
+function ArchiverPlugin() {
+    this.manifestPath = path.resolve("src/manifest.json");
+    this.manifestName = "manifest.json";
+    this.archivePath = path.resolve("metadata/staticresources") + "/Realty.resource";
 }
 ArchiverPlugin.prototype.apply = function(compiler) {
-    var path = this.path;
+    var manifestPath = this.manifestPath;
+    var manifestName = this.manifestName;
+    var archivePath = this.archivePath;
     compiler.plugin("after-emit", function(compiler, callback) {
-        var output = fs.createWriteStream(path);
+        var output = fs.createWriteStream(archivePath);
         var archive = archiver("zip");
         archive.pipe(output);
         for (var fileName in compiler.assets) {
@@ -18,6 +22,8 @@ ArchiverPlugin.prototype.apply = function(compiler) {
                 archive.append(stream, {name: fileName});
             }
         }
+        var manifestStream = fs.createReadStream(manifestPath);
+        archive.append(manifestStream, {name: manifestName});
         archive.finalize();
         callback();
     });
@@ -61,6 +67,6 @@ module.exports = {
             filename: "index.html",
             inject: "body"
         }),
-        new ArchiverPlugin("Realty")
+        new ArchiverPlugin()
     ]
 };

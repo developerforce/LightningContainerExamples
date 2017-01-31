@@ -1,7 +1,7 @@
-let jsforce = require("jsforce");
-let path = require("path");
-let fs = require("fs");
-let commander = require("commander");
+var jsforce = require("jsforce");
+var path = require("path");
+var fs = require("fs");
+var commander = require("commander");
 
 function loadContacts(conn) {
     conn.sobject("Contact").upsert([
@@ -684,7 +684,7 @@ function loadPropertyBrokers(conn) {
 }
 
 function load() {
-    let program = new commander.Command();
+    var program = new commander.Command();
     program.option("-l, --loginUrl [loginUrl]", "Salesforce login url")
             .option("-u, --username [username]", "Salesforce username")
             .option("-p, --password [password]", "Salesforce password (and security token, if necessary)")
@@ -695,7 +695,7 @@ function load() {
         return;
     }
 
-    let conn = new jsforce.Connection({loginUrl: program.loginUrl});
+    var conn = new jsforce.Connection({loginUrl: program.loginUrl});
     conn.login(program.username, program.password, function(err, userInfo) {
         if (err) {
             return console.error(err);
