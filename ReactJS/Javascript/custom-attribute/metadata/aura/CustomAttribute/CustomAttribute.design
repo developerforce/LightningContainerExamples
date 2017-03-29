@@ -1,0 +1,3 @@
+<design:component label="CustomAttribute">
+    <design:attribute name="greeting" label="Greeting"/>
+</design:component>

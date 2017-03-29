@@ -1,0 +1,4 @@
+<aura:component access="global" implements="flexipage:availableForAllPageTypes" >
+    <aura:attribute access="global" name="greeting" type="String" required="true" default="Hello"/>
+    <lightning:container src="{!$Resource.CustomAttribute + '/index.html?greeting=' + v.greeting}"/>
+</aura:component>
