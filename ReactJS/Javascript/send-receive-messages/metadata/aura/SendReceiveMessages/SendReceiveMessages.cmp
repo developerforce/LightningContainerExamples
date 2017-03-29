@@ -1,0 +1,26 @@
+<aura:component access="global" implements="flexipage:availableForAllPageTypes" >
+    
+    <aura:attribute access="private" name="messageToSend" type="String" default=""/>
+    <aura:attribute access="private" name="messageReceived" type="String" default=""/>
+    <aura:attribute access="private" name="error" type="String" default=""/>
+    
+    <div>
+        <lightning:input name="messageToSend" value="{!v.messageToSend}" label="Message to send to React app: "/><lightning:button label="Send" onclick="{!c.sendMessage}"/>
+        
+        <br/>
+        
+        <lightning:textarea value="{!v.messageReceived}" label="Message received from React app: "/>
+        
+        <br/>
+        
+        <aura:if isTrue="{! !empty(v.error)}">
+            <lightning:textarea name="errorTextArea" value="{!v.error}" label="Error: "/>
+        </aura:if>
+    
+        <lightning:container aura:id="ReactApp"
+                             src="{!$Resource.SendReceiveMessages + '/index.html'}"
+                             onmessage="{!c.handleMessage}"
+                             onerror="{!c.handleError}"/>
+    </div>
+    
+</aura:component>
