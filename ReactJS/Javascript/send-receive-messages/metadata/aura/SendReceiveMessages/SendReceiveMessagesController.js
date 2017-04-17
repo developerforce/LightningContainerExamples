@@ -21,6 +21,7 @@
     },
     
     handleError: function(component, error, helper) {
-        var e = error;
+        var description = error.getParams().description;
+        component.set("v.error", description);
     }
 })
